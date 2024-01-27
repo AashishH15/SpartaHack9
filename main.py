@@ -15,7 +15,14 @@ def map():
         geo_j = sim_geo.to_json()
         geo_j = folium.GeoJson(data=geo_j,
                                style_function=lambda x: {'fillColor': 'orange'})
-        folium.Popup(r['name']).add_to(geo_j)
+        
+        # Add a custom marker
+        folium.Marker(
+            location=[r['geometry'].centroid.y, r['geometry'].centroid.x],
+            popup=folium.Popup(r['name']),
+            icon=folium.Icon(color="red", icon="info-sign")
+        ).add_to(m)
+        
         geo_j.add_to(m)
     
     return m._repr_html_()
