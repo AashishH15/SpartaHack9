@@ -1,0 +1,28 @@
+[
+    {
+        "year": 3000,
+        "latitude": 51.5074,
+        "longitude": -0.1278,
+        "info": {
+            "GDP": "1000",
+            "Resources": "Coal",
+            "Rulers": "King A",
+            "Language": "English",
+            "Governing type": "Monarchy",
+            "History": "Some historical event"
+        }
+    },
+    {
+        "year": 2022,
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "info": {
+            "GDP": "2000",
+            "Resources": "Oil",
+            "Rulers": "President B",
+            "Language": "English",
+            "Governing type": "Democracy",
+            "History": "Some other historical event"
+        }
+    }
+]
