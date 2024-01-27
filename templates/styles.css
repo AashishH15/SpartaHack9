@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#map-container {
+    margin-top: 20px;
+    text-align: center;
+}
+iframe {
+    border: none;
+    width: 80%;
+    height: 600px;
+}

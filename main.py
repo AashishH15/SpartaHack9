@@ -1,9 +1,12 @@
-
 from flask import Flask, render_template
 import geopandas as gpd
 import folium
 
 gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+
+countries_to_mark = ['United States of America', 'China', 'Germany', 'India', 'Japan']
+
+gdf = gdf[gdf['name'].isin(countries_to_mark)]
 
 app = Flask(__name__)
 
