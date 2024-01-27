@@ -11,7 +11,7 @@ gdf = gdf[gdf['name'].isin(countries_to_mark)]
 app = Flask(__name__)
 
 def generate_map():
-    m = folium.Map(location=[0, 0], zoom_start=2, tiles='CartoDB positron')
+    m = folium.Map(location=[0, 0], zoom_start=2, tiles='OpenStreetMap', min_zoom=2)
 
     for _, r in gdf.iterrows():
         sim_geo = gpd.GeoSeries(r['geometry']).simplify(tolerance=0.001)
@@ -22,7 +22,7 @@ def generate_map():
         folium.Marker(
             location=[r['geometry'].centroid.y, r['geometry'].centroid.x],
             popup=folium.Popup(r['name']),
-            icon=folium.Icon(color="red", icon="info-sign")
+            icon=folium.Icon(color="black", icon="cutlery")
         ).add_to(m)
 
         geo_j.add_to(m)
