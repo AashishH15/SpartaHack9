@@ -1,8 +1,16 @@
+from server import server
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
+from flask import Flask, jsonify
+from app import server
+
+@server.route('/api/data', methods=['GET'])
+def get_data():
+    # Your code to fetch and return data
+    return jsonify({'data': 'Your data'})
 
 data = {
     'year': [1000, 1200, 1400, 1600, 1800, 2000],
@@ -12,7 +20,7 @@ data = {
 
 df = pd.DataFrame(data)
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, server=server)
 
 app.layout = html.Div([
     dcc.Graph(id='map-visualization'),
@@ -32,10 +40,7 @@ app.layout = html.Div([
     [Input('year-slider', 'value')]
 )
 def update_map(selected_year):
-    # Your code to update the map based on the selected year
-    # You can use Plotly to create maps and customize them
-
-    # Placeholder code, replace with actual map generation code
+    
     data = [
         go.Scattergeo(
             lon=[-74, -20, 50],
