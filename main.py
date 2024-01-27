@@ -4,8 +4,6 @@ from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
 
-# Sample data (you would need actual historical data)
-# This is just a placeholder
 data = {
     'year': [1000, 1200, 1400, 1600, 1800, 2000],
     'empires': [10, 15, 20, 18, 25, 30],
