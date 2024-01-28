@@ -5,7 +5,6 @@ import folium
 
 gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
 
-# countries_to_mark = ['United States of America', 'China', 'Germany', 'India', 'Japan']
 data = pd.read_csv('BKW_data.csv')
 
 # Get the unique countries
