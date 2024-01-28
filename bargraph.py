@@ -1,10 +1,9 @@
 import pandas as pd
 import plotly.express as px
 
-def create_bar_chart():    
+def create_bar_chart(filename):    
     # Read data from CSV file
-    file_path = 'BKW_data.csv'
-    data = pd.read_csv(file_path)
+    data = pd.read_csv(filename)
 
     # Create a bar graph using plotly
     fig = px.bar(data, x='name', y='dollar_price', color_discrete_sequence=['yellow'],

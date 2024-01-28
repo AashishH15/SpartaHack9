@@ -15,7 +15,9 @@ gdf = gdf[gdf['name'].isin(countries_to_mark)]
 
 app = Flask(__name__)
 
-def generate_map():
+def generate_map(filename):
+    data = pd.read_csv(filename)  # Load data based on the selected filename
+
     m = folium.Map(location=[0, 0], zoom_start=1, min_zoom=2, tiles='cartodbdark_matter', max_bounds=True)
 
     for _, r in gdf.iterrows():

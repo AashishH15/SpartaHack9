@@ -8,9 +8,14 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/<filename>')
+def update_content(filename):
+    generate_map(filename)
+    create_bar_chart(filename)
+
 @app.route('/map-content')
 def map_content():
-    map_html = generate_map()
+    map_html = generate_map('BKW_data.csv')
     return map_html
 
 @app.route('/info.csv')
@@ -19,7 +24,7 @@ def serve_csv():
 
 @app.route('/bar-graph-content')
 def bar_graph_content():
-    bar_graph_html = create_bar_chart()
+    bar_graph_html = create_bar_chart('BKW_data.csv')
     return bar_graph_html
 
 if __name__ == '__main__':
