@@ -31,7 +31,6 @@ def create_bar_chart():
     yaxis_title_font_color='white',
     )
 
-    # Convert the plot to HTML
     graph_html = fig.to_html()
 
     return graph_html
