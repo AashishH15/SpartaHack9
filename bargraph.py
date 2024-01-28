@@ -3,7 +3,7 @@ import plotly.express as px
 
 def create_bar_chart():    
     # Read data from CSV file
-    file_path = './info.csv'
+    file_path = 'info.csv'
     data = pd.read_csv(file_path)
 
     # Create a bar graph using plotly
