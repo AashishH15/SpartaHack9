@@ -5,24 +5,17 @@ import folium
 
 gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
 
-# data = pd.read_csv('BKW_data.csv')
+# countries_to_mark = ['United States of America', 'China', 'Germany', 'India', 'Japan']
+data = pd.read_csv('BKW_data.csv')
 
-# # Get the unique countries
-# countries_to_mark = data['name'].unique().tolist()
+# Get the unique countries
+countries_to_mark = data['name'].unique().tolist()
 
-# gdf = gdf[gdf['name'].isin(countries_to_mark)]
+gdf = gdf[gdf['name'].isin(countries_to_mark)]
 
 app = Flask(__name__)
 
-def generate_map(filename):
-    data = pd.read_csv(filename)
-
-    # Get the unique countries
-    countries_to_mark = data['name'].unique().tolist()
-
-    gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
-    gdf = gdf[gdf['name'].isin(countries_to_mark)]
-
+def generate_map():
     m = folium.Map(location=[0, 0], zoom_start=1, min_zoom=2, tiles='cartodbdark_matter', max_bounds=True)
 
     for _, r in gdf.iterrows():
