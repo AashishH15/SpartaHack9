@@ -15,7 +15,7 @@ def update_content(filename):
 
 @app.route('/map-content')
 def map_content():
-    filename = request.args.get('filename', 'BKW_data.csv')
+    filename = request.args.get('filename', 'MCD_data.csv')
     map_html = generate_map(filename)
     return map_html
 
@@ -25,7 +25,7 @@ def serve_csv():
 
 @app.route('/bar-graph-content')
 def bar_graph_content():
-    filename = request.args.get('filename', 'BKW_data.csv')
+    filename = request.args.get('filename', 'MCD_data.csv')
     bar_graph_html = create_bar_chart(filename)
     return bar_graph_html
 
