@@ -27,9 +27,42 @@
         margin-top: 20px;
         text-align: center;
     }
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 50px;
+    }
+    .button {
+      background-color: transparent;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        align-items: center;
+    }
+    .center {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 200px;
+    }
+    img{
+        width: 100px;
+    }
 </style>
 <body>
-    <h1 style="text-align: center;">Fast Food Economics</h1>
+    <h1>Fast Food Economics</h1>
+    <div class="center">
+      <button class="button"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463677104210/image.png?ex=65c86d11&is=65b5f811&hm=85dc19d0e5fe6f225c301c78da35454b69f26cd4273ebcf9e1c3f69837f21cf4&"/>
+      </button>
+      <button class="button"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463400276000/image_3.png?ex=65c86d11&is=65b5f811&hm=312d26e41b6314acb40a85c5fafe73d2a5057f71998182d3fc8c483895ee34ab&"/>
+      </button>
+      <button class="button"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055462758551622/image_1.png?ex=65c86d10&is=65b5f810&hm=071a52b541956ba731b2fa8d4f444a69ec52064defab14045100087a2abb8fdd&"/>
+      </button>
+      <button class="button"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463022796900/image_2.png?ex=65c86d10&is=65b5f810&hm=80f8ebca645003f6c4a794715fdc3e12d94c09488f7e7875a7bda18d81844355&"/>
+      </button>
+    </div>
     <div id="map-container">
         <iframe src="/map-content" frameborder="0"></iframe>
     </div>
