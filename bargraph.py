@@ -5,7 +5,6 @@ def create_bar_chart():
     file_path = 'BKW_data.csv'
     data = pd.read_csv(file_path)
 
-    # Create a bar graph using plotly
     fig = px.bar(data, x='name', y='dollar_price', color='dollar_price', color_continuous_scale='Bluered_r',
                 labels={'name': 'Country', 'dollar_price': 'Cost of Whopper (USD)'}, 
                 title='The Whopper Index', hover_data=['name', 'dollar_price'])
