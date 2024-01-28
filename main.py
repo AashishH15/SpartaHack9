@@ -35,5 +35,13 @@ def bar_graph_content():
 def download_gdp_data():
     return send_from_directory('.', 'gdp.json', as_attachment=True)
 
+@app.route('/download-BKW-data')
+def download_BKW_data():
+    return send_from_directory('.', 'BKW.json', as_attachment=True)
+
+@app.route('/download-MCD-data')
+def download_MCD_data():
+    return send_from_directory('.', 'MCD.json', as_attachment=True)
+
 if __name__ == '__main__':
     app.run(debug=True)
