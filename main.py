@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import geopandas as gpd
+import pandas as pd
 import folium
 
 gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
