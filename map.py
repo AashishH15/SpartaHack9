@@ -12,7 +12,7 @@ gdf = gdf[gdf['name'].isin(countries_to_mark)]
 app = Flask(__name__)
 
 def generate_map():
-    m = folium.Map(location=[0, 0], zoom_start=1, min_zoom=2, tiles='cartodbdark_matter')
+    m = folium.Map(location=[0, 0], zoom_start=1, min_zoom=2, tiles='cartodbdark_matter', max_bounds=True)
 
     for _, r in gdf.iterrows():
         sim_geo = gpd.GeoSeries(r['geometry']).simplify(tolerance=0.001)
