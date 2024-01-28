@@ -14,7 +14,7 @@ def create_bar_chart(filename):
         paper_bgcolor='white',
         font_color='black',
         font_family='Courier New, monospace',
-        font_size=18,
+        font_size=18,   
         title_font_family='Times New Roman, Times, serif',
         title_font_color='black',
         title_font_size=24,

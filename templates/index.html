@@ -51,6 +51,23 @@
         color: white;
         box-shadow: 0 9px #999;
     }
+    
+    .buttonMcD:hover #imgMcD{
+        content: url("https://media.discordapp.net/attachments/1200857030177591448/1201181692879183902/gif.gif?ex=65c8e2a0&is=65b66da0&hm=4c76a25e6a0354420c4dbea4e32cfbaf33f4fb0950948c334a46b476a7558746&=&width=791&height=593")
+    }
+
+    .buttonBK:hover #imgBK{
+        content: url("https://media.discordapp.net/attachments/1200857030177591448/1201181912782356500/womp_womp.gif?ex=65c8e2d4&is=65b66dd4&hm=685cf9f4d5f91e20f6e5da7a0bbec198ec9970a46f78bcb30db1543a49df022b&=&width=791&height=593")
+    }
+
+    .buttonSW:hover #imgSW{
+        content: url("https://media.discordapp.net/attachments/1200857030177591448/1201182526165757982/sub.gif?ex=65c8e367&is=65b66e67&hm=2c0b276f97a5ebf4ab4c3aaca2f957d8a2dcbcc61e2f1ed232f1a8fb344b33df&=&width=791&height=593")
+    }
+
+    .buttonSB:hover #imgSB{
+        content: url("https://media.discordapp.net/attachments/1200857030177591448/1201182170333589574/SOB.gif?ex=65c8e312&is=65b66e12&hm=1120faf8ddace0b2992895646533ded053e3245f7f345675232f8bb9778b829c&=&width=791&height=593")
+    }
+
     .button:active {
         background-color: #18453B;
         box-shadow: 0 5px #666;
@@ -86,34 +103,5 @@
     <div id="bar-graph-container">
       <iframe id="bar-graph-iframe" src="/bar-graph-content" frameborder="0"></iframe>
     </div>
-    <!--div id="csv-data"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script>
-    fetch('/info.csv')
-        .then(response => response.text())
-        .then(data => {
-            var results = Papa.parse(data, {header: true});
-            var table = document.createElement('table');
-            var thead = document.createElement('thead');
-            var headerRow = document.createElement('tr');
-            results.meta.fields.forEach(field => {
-                var th = document.createElement('th');
-                th.textContent = field;
-                headerRow.appendChild(th);
-            });
-            thead.appendChild(headerRow);
-            table.appendChild(thead);
-            results.data.forEach(row => {
-                var tr = document.createElement('tr');
-                for (var key in row) {
-                    var td = document.createElement('td');
-                    td.textContent = row[key];
-                    tr.appendChild(td);
-                }
-                table.appendChild(tr);
-            });
-            document.getElementById('csv-data').appendChild(table);
-        });
-    </script-->
 </body>
 </html>
