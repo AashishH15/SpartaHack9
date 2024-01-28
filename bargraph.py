@@ -5,7 +5,7 @@ def create_bar_chart(filename):
     data = pd.read_csv(filename)
 
     fig = px.bar(data, x='name', y='dollar_price', color='dollar_price', color_continuous_scale='YlOrRd',
-                labels={'Country': 'Cost of Whopper (USD)'}, title='The Whopper Index')
+                labels={'Country': 'Cost of Whopper (USD)'})
 
     fig.update_traces(marker_line_width=1.5, marker_line_color='rgb(8,48,107)')
 
