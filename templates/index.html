@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,4 +30,77 @@
         <iframe src="/map-content" frameborder="0"></iframe>
     </div>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eating Map</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #262626;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+        }
+        #toggle-button {
+            display: block;
+            margin: 0 auto;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        #toggle-button:hover {
+            background-color: #45a049;
+        }
+        #map-container {
+            display: none;
+            text-align: center;
+        }
+        #map-container.show {
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            z-index: 999;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eating Map</h1>
+    <button id="toggle-button">Toggle Map</button>
+    <div id="map-container">
+        <iframe src="/map-content" frameborder="0"></iframe>
+    </div>
+    <script>
+        var button = document.getElementById('toggle-button');
+        var mapContainer = document.getElementById('map-container');
+
+        button.addEventListener('click', function() {
+            mapContainer.classList.toggle('show');
+        });
+    </script>
+</body>
 </html>
+
