@@ -86,6 +86,8 @@
       <button class="button buttonSW"onclick="updateContent('SWAY_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201070760802918490/image_1.png?ex=65c87b50&is=65b60650&hm=29a7e0d6445a3bdae0f4e99654f43c3940a283fffbf4804b6856758d2588717e&"/></button>
       <button class="button buttonSB"onclick="updateContent('STBUCKS_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463022796900/image_2.png?ex=65c86d10&is=65b5f810&hm=80f8ebca645003f6c4a794715fdc3e12d94c09488f7e7875a7bda18d81844355&"/></button>
     </div>
+    <h2>MATLAB GDP Graph</h2>
+    <a href="/download-gdp-data">Download GDP Data</a>
     <script>
       async function updateContent(filename) {
         document.getElementById('map-iframe').src = `/map-content?filename=${filename}` 
@@ -104,7 +106,7 @@
         var imgBK = buttonBK.querySelector('img');
         var originalSrcBK = imgBK.src;
         buttonBK.addEventListener('mouseover', function() {
-            imgBK.src = "https://media.discordapp.net/attachments/1200857030177591448/1201181912782356500/womp_womp.gif?ex=65c8e2d4&is=65b66dd4&hm=685cf9f4d5f91e20f6e5da7a0bbec198ec9970a46f78bcb30db1543a49df022b&=&width=791&height=593";
+            imgBK.src = "https://media.discordapp.net/attachments/1200857030177591448/1201193320207110265/output-onlinegiftools_5.gif?ex=65c8ed74&is=65b67874&hm=29133816ef5a6f8d19276ac3f6039208de7b6f1f6179a01822f904947efac62a&=&width=791&height=593";
         });
 
         var buttonSW = document.querySelector('.buttonSW');
@@ -121,6 +123,7 @@
             imgSB.src = "https://media.discordapp.net/attachments/1200857030177591448/1201189566019805215/output-onlinegiftools_2.gif?ex=65c8e9f5&is=65b674f5&hm=b2067d785e84b48fd53d3f331aecad489142886d2facf79252aa96b589c6d334&=&width=791&height=593";
         });
       }
+        
     </script>
     <p>This website was created to visualize the Big Mac Index, along with the average cost of other fast food goods around the world. Below you will find a world map and bar graph. The icons at the top change the item which is being visualized.</p>
     <p>The <a target="_blank" href="https://en.wikipedia.org/wiki/Big_Mac_Index">Big Mac Index</a> is an informal way of measuring the purchasing power of a country's currency. It originated in a 1986 issue of <i>The Economist</i> as a way to measure <a target="_blank" href="https://en.wikipedia.org/wiki/Purchasing_power_parity">purchasing power parity</a>. The Big Mac index has become a global standard, showing up in dozens of textbooks and being the subject of many studies.</p>

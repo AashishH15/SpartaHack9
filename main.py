@@ -1,6 +1,8 @@
-from flask import Flask, render_template, send_file, request
+from flask import Flask, render_template, send_file, request, jsonify
 from map import generate_map
 from bargraph import create_bar_chart
+from flask import send_from_directory
+import json
 
 app = Flask(__name__)
 
@@ -28,6 +30,10 @@ def bar_graph_content():
     filename = request.args.get('filename', 'BKW_data.csv')
     bar_graph_html = create_bar_chart(filename)
     return bar_graph_html
+
+@app.route('/download-gdp-data')
+def download_gdp_data():
+    return send_from_directory('.', 'gdp.json', as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
