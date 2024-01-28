@@ -18,8 +18,7 @@ def generate_map():
         sim_geo = gpd.GeoSeries(r['geometry']).simplify(tolerance=0.001)
         geo_j = sim_geo.to_json()
         geo_j = folium.GeoJson(data=geo_j,
-                               style_function=lambda x: {'fillColor': 'yellow', 'color': 'yellow'},
-                               tooltip=r['name'])
+                               style_function=lambda x: {'fillColor': 'yellow', 'color': 'yellow'})
 
         geo_j.add_to(m)
 
