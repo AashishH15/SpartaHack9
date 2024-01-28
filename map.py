@@ -23,14 +23,17 @@ def generate_map(filename):
     gdf = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
     gdf = gdf[gdf['name'].isin(countries_to_mark)]
 
+    # Merge gdf with data to include dollar_price
+    gdf = gdf.merge(data, on='name')
+
     m = folium.Map(location=[0, 0], zoom_start=1, min_zoom=2, tiles='cartodbdark_matter', max_bounds=True)
 
     for _, r in gdf.iterrows():
         sim_geo = gpd.GeoSeries(r['geometry']).simplify(tolerance=0.001)
         geo_j = sim_geo.to_json()
         geo_j = folium.GeoJson(data=geo_j,
-                               style_function=lambda x: {'fillColor': '#FFC302', 'color': '#FFC302'},
-                               tooltip=r['name'])
+                               style_function=lambda x: {'fillColor': 'transparent', 'color': 'yellow'},
+                               tooltip=f"{r['name']}: ${r['dollar_price']}")
 
         geo_j.add_to(m)
 
