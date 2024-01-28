@@ -29,4 +29,3 @@ def generate_map():
         geo_j.add_to(m)
 
     return m._repr_html_()
-
