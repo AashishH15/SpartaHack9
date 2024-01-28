@@ -1,2 +1,4 @@
 
 *.pyc
+*.pyc
+__pycache__/map.cpython-310.pyc
