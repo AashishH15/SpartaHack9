@@ -1,18 +1,18 @@
-% MATLAB code to create a 3D bar graph from CSV data
+% Generate random data
+data = randn(1000, 3);
 
-file_path = 'BKW_data.csv';
-data = readtable(file_path);
+% Create a 2D histogram
+[N, Xedges, Yedges] = histcounts2(data(:,1), data(:,2), [20 20]);
 
-names = data.name;
-dollar_prices = data.dollar_price;
+% Create a 3D bar plot
+figure;
+bar3(N);
 
-third_var = ones(size(dollar_prices));
+% Set the view angle
+view(3);
 
-bar3(dollar_prices);
-
-set(gca, 'XTickLabel',names, 'XTick',1:numel(names), 'YTickLabel',third_var, 'YTick',1:numel(third_var))
-
-title('The Whopper Index');
-xlabel('Country');
-ylabel('Third Variable');
-zlabel('Cost of Whopper (USD)');
+% Add labels and title
+xlabel('X');
+ylabel('Y');
+zlabel('Frequency');
+title('3D Histogram');
