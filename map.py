@@ -20,12 +20,6 @@ def generate_map():
         geo_j = folium.GeoJson(data=geo_j,
                                style_function=lambda x: {'fillColor': 'yellow', 'color': 'yellow'})
 
-        folium.Marker(
-            location=[r['geometry'].centroid.y, r['geometry'].centroid.x],
-            popup=folium.Popup(r['name']),
-            icon=folium.Icon(color="black", icon="cutlery")
-        ).add_to(m)
-
         geo_j.add_to(m)
 
     return m._repr_html_()
