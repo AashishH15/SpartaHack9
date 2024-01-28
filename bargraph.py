@@ -5,16 +5,20 @@ def create_bar_chart(filename):
     data = pd.read_csv(filename)
 
     color = 'YlOrRd'
+    ntitle = "Big Mac"
     print(filename)
     if filename == "BKW_data.csv":
         color = "Oranges"
+        ntitle = "Whopper"
     elif filename == "SWAY_data.csv":
         color = "haline"
+        ntitle = "Footlong"
     elif filename == "STBUCKS_data.csv":
         color = "Greens"
+        ntitle = "Tall Latte"
 
     fig = px.bar(data, x='name', y='dollar_price', color='dollar_price', color_continuous_scale=color,
-                labels={'Country': 'Cost of Whopper (USD)'})
+                labels={'Country': f'Cost of a {ntitle} (USD)'}, title = f'Cost of a {ntitle} (USD)')
 
     fig.update_traces(marker_line_width=1.5, marker_line_color='rgb(8,48,107)')
 

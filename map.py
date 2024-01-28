@@ -18,13 +18,17 @@ app = Flask(__name__)
 def generate_map(filename):
     data = pd.read_csv(filename)  # Load data based on the selected filename
     color = "#DD1423"
+    ntitle = "Big Mac"
     print(filename)
     if filename == "BKW_data.csv":
         color = "#ED7903"
+        ntitle = "Whopper"
     elif filename == "SWAY_data.csv":
         color = "#FFC919"
+        ntitle = "Footlong"
     elif filename == "STBUCKS_data.csv":
         color = "#0C421A"
+        ntitle = "Tall Latte"
 
     countries_to_mark = data['name'].unique().tolist()
 
@@ -41,7 +45,7 @@ def generate_map(filename):
         geo_j = sim_geo.to_json()
         geo_j = folium.GeoJson(data=geo_j,
                                style_function=lambda x: {'fillColor': 'transparent', 'color': color},
-                               tooltip=f"{r['name']}: ${r['dollar_price']}")
+                               tooltip=f"{r['name']}\n {ntitle}: ${r['dollar_price']}")
 
         geo_j.add_to(m)
 
