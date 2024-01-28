@@ -69,24 +69,22 @@
 <body>
     <h1>Fast Food Economics</h1>
     <div class="center">
-      <button class="button buttonMcD"onclick="updateContent('../MCD_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463677104210/image.png?ex=65c86d11&is=65b5f811&hm=85dc19d0e5fe6f225c301c78da35454b69f26cd4273ebcf9e1c3f69837f21cf4&"/></button>
-      <button class="button buttonBK"onclick="updateContent('../BKW_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463400276000/image_3.png?ex=65c86d11&is=65b5f811&hm=312d26e41b6314acb40a85c5fafe73d2a5057f71998182d3fc8c483895ee34ab&"/></button>
-      <button class="button buttonSW"onclick="updateContent('../SWAY_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201070760802918490/image_1.png?ex=65c87b50&is=65b60650&hm=29a7e0d6445a3bdae0f4e99654f43c3940a283fffbf4804b6856758d2588717e&"/></button>
-      <button class="button buttonSB"onclick="updateContent('../STBUCKS_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463022796900/image_2.png?ex=65c86d10&is=65b5f810&hm=80f8ebca645003f6c4a794715fdc3e12d94c09488f7e7875a7bda18d81844355&"/></button>
+      <button class="button buttonMcD"onclick="updateContent('MCD_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463677104210/image.png?ex=65c86d11&is=65b5f811&hm=85dc19d0e5fe6f225c301c78da35454b69f26cd4273ebcf9e1c3f69837f21cf4&"/></button>
+      <button class="button buttonBK"onclick="updateContent('BKW_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463400276000/image_3.png?ex=65c86d11&is=65b5f811&hm=312d26e41b6314acb40a85c5fafe73d2a5057f71998182d3fc8c483895ee34ab&"/></button>
+      <button class="button buttonSW"onclick="updateContent('SWAY_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201070760802918490/image_1.png?ex=65c87b50&is=65b60650&hm=29a7e0d6445a3bdae0f4e99654f43c3940a283fffbf4804b6856758d2588717e&"/></button>
+      <button class="button buttonSB"onclick="updateContent('STBUCKS_data.csv')"><img src="https://cdn.discordapp.com/attachments/1200816368220635200/1201055463022796900/image_2.png?ex=65c86d10&is=65b5f810&hm=80f8ebca645003f6c4a794715fdc3e12d94c09488f7e7875a7bda18d81844355&"/></button>
     </div>
     <script>
       async function updateContent(filename) {
-        const response = await fetch(`${filename}`);
-        const data = await response.text();
-        document.getElementById('map-container').innerHTML = data;
-        document.getElementById('bar-graph-container').innerHTML = await fetch('/bar-graph-content').then(res => res.text());
+        document.getElementById('map-iframe').src = `/map-content?filename=${filename}` 
+        document.getElementById('bar-graph-iframe').src = `/bar-graph-content?filename=${filename}` 
       }
     </script>
     <div id="map-container">
-        <iframe src="/map-content" frameborder="0"></iframe>
+        <iframe id="map-iframe" src="/map-content" frameborder="0"></iframe>
     </div>
     <div id="bar-graph-container">
-      <iframe src="/bar-graph-content" frameborder="0"></iframe>
+      <iframe id="bar-graph-iframe" src="/bar-graph-content" frameborder="0"></iframe>
     </div>
     <!--div id="csv-data"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
