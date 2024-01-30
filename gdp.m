@@ -13,7 +13,7 @@ bar3(X, yValues, repmat(zValues, length(yValues), 1));
 
 view(3);
 
-set(gca, 'XTickLabel', categories);
+set(gca, 'XTickLabel', categories);0
 
 xlabel('COUNTRYS');
 ylabel('GDP');
